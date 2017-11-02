@@ -1,5 +1,6 @@
 import json
 
+
 def main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
@@ -94,7 +95,18 @@ def your_interesting_demographic_function(counties):
     return second, third
     """Compute and return an interesting fact using the demographic data about the counties in the US."""
 
-if __name__ == '__main__':
-    main()
+def your_interesting_demographic_function(counties):
+    first = counties[0]["Age"]["Percent Under 18 Years"]
+    second = counties[0]["County"]
+    third = counties[0]["State"]
+    for c in counties:
+        if c["Age"]["Percent Under 18 Years"] < first:
+            first = c["Age"]["Percent Under 18 Years"] 
+            second = c["County"]
+            third = c["State"]
+    return second, third
+    """Compute and return an interesting fact using the demographic data about the counties in the US."""
+
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)

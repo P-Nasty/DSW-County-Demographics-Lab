@@ -96,3 +96,5 @@ def your_interesting_demographic_function(counties):
 
 if __name__ == '__main__':
     main()
+if __name__=="__main__":
+    app.run(debug=False, port=54321)

@@ -1,15 +1,13 @@
 import json
-
+app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
 def main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-    print(alphabetically_first_county(counties))
-    print(county_most_under_18(counties))
-    print(percent_most_under_18(counties))
-    print(most_under_18(counties))
-    print(state_with_most_counties(counties))
-    print(your_interesting_demographic_function(counties))
+        state = get_state_options
+    get_state_options(counties)
+    fun_fact(state)
+    
 
 def alphabetically_first_county(counties):
     """Return the county with the name that comes first alphabetically."""
@@ -93,19 +91,25 @@ def your_interesting_demographic_function(counties):
             second = c["County"]
             third = c["State"]
     return second, third
-    """Compute and return an interesting fact using the demographic data about the counties in the US."""
+     """Compute and return an interesting fact using the demographic data about the counties in the US."""
 
-def your_interesting_demographic_function(counties):
-    first = counties[0]["Age"]["Percent Under 18 Years"]
-    second = counties[0]["County"]
-    third = counties[0]["State"]
+def get_state_options(counties):
+    first = []
+    second = ""
     for c in counties:
-        if c["Age"]["Percent Under 18 Years"] < first:
-            first = c["Age"]["Percent Under 18 Years"] 
-            second = c["County"]
-            third = c["State"]
-    return second, third
-    """Compute and return an interesting fact using the demographic data about the counties in the US."""
+        first.append(c["state])
+        for c in first:
+            second += second + c
+    rendertemplate(demographics.html, first)
+    return first                  
+def fun_fact(state):
+    for c in counties:
+        first.append(c["state])
+        for c in first:
+            second += second + c
+    rendertemplate(demographics.html, first)                       
+                     
+  
 
 
 if __name__=="__main__":

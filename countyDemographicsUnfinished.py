@@ -3,7 +3,7 @@ import json
 import os
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 @app.route("/")
-def main():
+def render_main():
    return render_template("demographics.html")
    """ with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)

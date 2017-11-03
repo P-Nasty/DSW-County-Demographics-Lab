@@ -1,15 +1,16 @@
 import json
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
-
+@app.route("/")
 def main():
-    with open('county_demographics.json') as demographics_data:
+    render_template(demographics.html)
+   """ with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
         state = get_state_options
     get_state_options(counties)
-    fun_fact(state)
+    fun_fact(state)"""
     
 
-def alphabetically_first_county(counties):
+"""def alphabetically_first_county(counties):
     """Return the county with the name that comes first alphabetically."""
     first = counties[0]["County"]
     for c in counties:
@@ -90,26 +91,27 @@ def your_interesting_demographic_function(counties):
             first = c["Age"]["Percent Under 18 Years"] 
             second = c["County"]
             third = c["State"]
-    return second, third
+    return second, third"""
      """Compute and return an interesting fact using the demographic data about the counties in the US."""
 
-def get_state_options(counties):
+"""def get_state_options(counties):
     first = []
     second = ""
     for c in counties:
         first.append(c["state])
-        for c in first:
-            second += Markup("<option value=\"" + c + "\">" + c + "</option>")
+    for c in first:
+        second += Markup("<option value=\"" + c + "\">" + c + "</option>")
     rendertemplate(demographics.html, list = second)
     return first                  
 def fun_fact(state):
     counter = 0;
     for c in counties:
         if c["state"] = states[counter]:
+            
              
         for c in first:
             second += second + c
-    rendertemplate(demographics.html, first)                       
+    rendertemplate(demographics.html, first) """                      
                      
   
 

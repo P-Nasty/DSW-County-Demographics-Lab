@@ -103,8 +103,10 @@ def get_state_options(counties):
     rendertemplate(demographics.html, first)
     return first                  
 def fun_fact(state):
+    counter = 0;
     for c in counties:
-        first.append(c["state])
+        if c["state"] = states[counter]:
+             
         for c in first:
             second += second + c
     rendertemplate(demographics.html, first)                       

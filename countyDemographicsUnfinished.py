@@ -100,7 +100,7 @@ def get_state_options(counties):
         first.append(c["state])
         for c in first:
             second += Markup("<option value=\"" + c + "\">" + c + "</option>")
-    rendertemplate(demographics.html, first)
+    rendertemplate(demographics.html, list = second)
     return first                  
 def fun_fact(state):
     counter = 0;

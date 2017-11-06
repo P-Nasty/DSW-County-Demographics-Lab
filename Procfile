@@ -1,1 +1,1 @@
-web: gunicorn countyDemographicsUnfinished.py:app --preload --log-file=-
+web: gunicorn countyDemographicsUnfinished:app --preload --log-file=-

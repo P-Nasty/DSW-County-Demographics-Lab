@@ -6,13 +6,15 @@
     <meta name="theme-color" content="#1a126d">
     <title>Home</title>
   </head>
-<body>
-<form action="/demographics">
-  <select name="states">
-    {{list}}
-  </select>
-  <br><br>
-  <input type="submit">
-</form>
-</body>
+  <body>
+   <form action='/home'>
+    <select name="state">
+      {{ options }}
+    </select>
+    <br><br>
+    <input type="submit">
+    <br><br>
+    <p>{{ response }}</p>
+   </form>
+  </body>
 </html>

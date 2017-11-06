@@ -9,12 +9,12 @@ with open('county_demographics.json') as demographics_data:
 
 @app.route("/")
 def render_main():
-    return render_template('home.html', options = get_state_options())
+    return render_template('demographics.html', options = get_state_options())
 
 @app.route("/home")
 def render_response():
     state = request.args["state"]
-    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function(state))
+    return render_template('demographics.html', options = get_state_options(),response = your_interesting_demographic_function(state))
 
 def get_state_options():
         

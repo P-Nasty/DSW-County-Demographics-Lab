@@ -38,7 +38,7 @@ def your_interesting_demographic_function(stateName):
     employ = counties[count]["Employment"]["Private Non-farm Establishments"]
     return state + ": " + county + ": " + word + str(employ)
 
-
+"""
 def your_interesting_demographic_function_random(stateName):
     
     countBegin = 0
@@ -50,6 +50,7 @@ def your_interesting_demographic_function_random(stateName):
        
     countyNum = randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for (c, v) in counties[countyNum].items() if not c == stateName or c == counties[countyNum]["County"]}
+    """
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)

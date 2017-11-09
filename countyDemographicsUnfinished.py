@@ -34,8 +34,8 @@ def your_interesting_demographic_function(stateName):
            
     state = counties[count]["State"] 
     county = counties[count]["County"]
-    word = "Employment: Private Non-farm Establisment: "
-    employ = counties[count]["Employment"]["Private Non-farm Establishments"]
+    word = "Education: Bachelor's Degree or Higher:"
+    employ = counties[count]["Education"][ "Bachelor's Degree or Higher"]
     return state + ": " + county + ": " + word + str(employ)
 
 """
